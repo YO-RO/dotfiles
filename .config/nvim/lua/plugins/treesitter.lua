@@ -10,9 +10,17 @@ return {
         },
         opts = {
             ensure_installed = {
+                "bash",
+                "tmux",
                 "lua",
                 "go",
                 "rust",
+                "make",
+                "sql",
+                "jsonc",
+                "markdown",
+                "markdown_inline",
+                "vimdoc",
             },
             highlight = { enable = true, },
             indent = { enable = true, },
