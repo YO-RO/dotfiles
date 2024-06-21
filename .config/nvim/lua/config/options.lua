@@ -4,8 +4,10 @@ set.termguicolors = true
 
 set.confirm = true
 
-set.number = true
+set.number = true            -- 行番号を表示
 set.relativenumber = true
+set.cursorline = true        -- カーソルがある行を強調
+set.cursorlineopt = "number" -- 行番号のみ強調
 set.signcolumn = "yes"       -- 行番号の左のスペースを常に表示
 set.wrap = true
 

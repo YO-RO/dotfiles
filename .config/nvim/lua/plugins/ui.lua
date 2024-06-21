@@ -21,11 +21,7 @@ return {
                     lCursor = { fg = colors.crust, bg = colors.rosewater },
                     CursorIM = { fg = colors.crust, bg = colors.red },
 
-                    -- When relativenumber option is set, this custom makes highlights proper.
-                    -- When norelativenumber option is set, comment out this custom.
-                    LineNr = { fg = colors.lavender },
-                    LineNrAbove = { fg = colors.overlay1 },
-                    LineNrBelow = { fg = colors.overlay1 },
+                    LineNr = { fg = colors.overlay1 }
                 }
             end,
             integrations = {
