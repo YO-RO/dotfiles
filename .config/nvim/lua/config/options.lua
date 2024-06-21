@@ -6,6 +6,7 @@ set.confirm = true
 
 set.number = true
 set.relativenumber = true
+set.signcolumn = "yes"       -- 行番号の左のスペースを常に表示
 set.wrap = true
 
 set.expandtab = true
