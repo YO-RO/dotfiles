@@ -92,6 +92,15 @@ return {
         },
     },
     {
+        "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
+        opts = {
+            signs = {
+                add = { text = "+" },
+            },
+        },
+    },
+    {
         -- Center windows
         "shortcuts/no-neck-pain.nvim",
         event = "UIEnter",
