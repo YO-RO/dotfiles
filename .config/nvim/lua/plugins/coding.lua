@@ -215,4 +215,29 @@ return {
             },
         },
     },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/cmp-emoji",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+        },
+        opts = function(_, opts)
+            local cmp = require("cmp")
+
+            opts.mapping = cmp.mapping.preset.insert({
+                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                ['<C-e>'] = cmp.mapping.abort(),
+                ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            })
+
+            opts.sources = {
+                { name = "emoji" },
+                { name = "nvim_lsp" },
+                { name = "path" },
+            }
+        end,
+    },
 }
