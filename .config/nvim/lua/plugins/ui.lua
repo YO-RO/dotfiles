@@ -122,15 +122,11 @@ return {
     {
         -- Make indents easier to see
         "shellRaining/hlchunk.nvim",
-        event = "VeryLazy",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             chunk = {
-                style = {
-                    -- Catppuccin.Mocha.Overlay0
-                    { fg = "#6c7086" },
-                    -- Catppuccin.Mocha.Maroon
-                    { fg = "#eba0ac" },
-                },
+                enable = true,
+                delay = 0, -- 0 disables animation
             },
             indent = { enable = false },
             line_num = { enable = false },
