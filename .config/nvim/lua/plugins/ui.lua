@@ -162,4 +162,28 @@ return {
         },
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    {
+        "nvimdev/lspsaga.nvim",
+        event = "LspAttach",
+        opts = {
+            symbol_in_winbar = {
+                enable = false,
+            },
+            code_action = {
+                extend_gitsigns = true,
+            },
+            finder = {
+                keys = {
+                    shuttle = "[w",
+                    toggle_or_open = "<CR>",
+                    vsplit = "v",
+                    split = "s",
+                    tabe = "t",
+                    tabnew = "r",
+                    quit = "q",
+                    close = "<C-c>k",
+                },
+            },
+        },
+    },
 }

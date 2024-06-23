@@ -3,31 +3,6 @@ return {
         "neovim/nvim-lspconfig",
         lazy = false,
         dependencies = {
-            {
-                "nvimdev/lspsaga.nvim",
-                config = function()
-                    require("lspsaga").setup({
-                        symbol_in_winbar = {
-                            enable = false,
-                        },
-                        code_action = {
-                            extend_gitsigns = true,
-                        },
-                        finder = {
-                            keys = {
-                                shuttle = "[w",
-                                toggle_or_open = "<CR>",
-                                vsplit = "v",
-                                split = "s",
-                                tabe = "t",
-                                tabnew = "r",
-                                quit = "q",
-                                close = "<C-c>k",
-                            },
-                        },
-                    })
-                end
-            },
             "b0o/schemastore.nvim", -- Json Yaml 用のschemaStore
         },
         config = function()
