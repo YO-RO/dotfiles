@@ -163,11 +163,15 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
+        -- LSP関連のUI
         "nvimdev/lspsaga.nvim",
         event = "LspAttach",
         opts = {
             symbol_in_winbar = {
                 enable = false,
+            },
+            lightbulb = {
+                virtual_text = false,
             },
             code_action = {
                 extend_gitsigns = true,
