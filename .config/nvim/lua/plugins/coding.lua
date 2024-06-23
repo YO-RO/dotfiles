@@ -83,7 +83,7 @@ return {
                 function()
                     require("dial.map").manipulate("increment", "normal")
                 end,
-                desc = "Open file explorer",
+                desc = "Increase value",
             },
             {
                 "<C-a>",
@@ -91,14 +91,14 @@ return {
                     require("dial.map").manipulate("increment", "visual")
                 end,
                 mode = "v",
-                desc = "Open file explorer",
+                desc = "Increase value",
             },
             {
                 "<C-x>",
                 function()
                     require("dial.map").manipulate("decrement", "normal")
                 end,
-                desc = "Open file explorer",
+                desc = "Decrement value",
             },
             {
                 "<C-x>",
@@ -106,7 +106,7 @@ return {
                     require("dial.map").manipulate("decrement", "visual")
                 end,
                 mode = "v",
-                desc = "Open file explorer",
+                desc = "Decrement value",
             },
         },
     },
