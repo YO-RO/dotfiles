@@ -216,6 +216,23 @@ return {
         },
     },
     {
+        -- nvimの設定ファイルの編集用のプラグイン
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                "lazy.nvim",
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "luvit-meta/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    {
+        -- for folke/lazydev.nvim
+        -- optional `vim.uv` typings
+        "Bilal2453/luvit-meta",
+    },
+    {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
@@ -234,6 +251,10 @@ return {
             })
 
             opts.sources = {
+                {
+                    name = "lazydev",
+                    group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+                },
                 { name = "emoji" },
                 { name = "nvim_lsp" },
                 { name = "path" },
