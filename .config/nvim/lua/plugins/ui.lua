@@ -1,4 +1,5 @@
 return {
+    -- テーマを変えるときはlualineも忘れずに!
     {
         -- Colorscheme
         "folke/tokyonight.nvim",
@@ -126,5 +127,30 @@ return {
             line_num = { enable = false },
             blank = { enable = false },
         },
+    },
+    {
+        -- Status Line
+        'nvim-lualine/lualine.nvim',
+        event = "ColorScheme",
+        opts = {
+            options = {
+                theme = "tokyonight",
+                section_separators = '',
+                component_separators = '',
+            },
+            sections = {
+                lualine_a = { 'filename' },
+                lualine_b = { 'branch' },
+                lualine_c = {
+                    { 'diff',        draw_empty = true },
+                    "'%='", -- 中央に表示する
+                    { 'diagnostics', draw_empty = true },
+                },
+                lualine_x = { 'encoding', 'fileformat', 'filetype' },
+                lualine_y = { 'progress' },
+                lualine_z = {},
+            },
+        },
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 }
