@@ -110,6 +110,13 @@ return {
                         "<cmd>Lspsaga diagnostic_jump_next<CR>",
                         bufopts
                     )
+                    vim.keymap.set(
+                        { "n", "i" }, "<C-k>",
+                        function()
+                            require('lsp_signature').toggle_float_win()
+                        end,
+                        bufopts
+                    )
                 end,
             })
         end,

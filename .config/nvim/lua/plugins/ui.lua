@@ -195,17 +195,5 @@ return {
         "ray-x/lsp_signature.nvim",
         event = "VeryLazy",
         opts = {},
-        keys = {
-            {
-                "<C-k>",
-                function()
-                    require('lsp_signature').toggle_float_win()
-                end,
-                mode = { "n", "i" },
-                desc = "toggle signature",
-                noremap = true,
-                silent = true,
-            },
-        }
     },
 }
