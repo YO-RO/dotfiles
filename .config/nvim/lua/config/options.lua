@@ -13,7 +13,7 @@ set.wrap = true
 
 set.expandtab = true
 set.tabstop = 4
-set.shiftwidth = 0 -- tabstopと同じ値になる
+set.shiftwidth = 0   -- tabstopと同じ値になる
 set.softtabstop = -1 -- shiftwidthと同じ値になる
 -- 言語別のインデント設定
 vim.api.nvim_create_augroup("indent", {})
