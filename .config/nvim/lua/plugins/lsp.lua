@@ -8,7 +8,10 @@ return {
                 config = function()
                     require("lspsaga").setup({
                         symbol_in_winbar = {
-                            enable = true,
+                            enable = false,
+                        },
+                        code_action = {
+                            extend_gitsigns = true,
                         },
                         finder = {
                             keys = {
