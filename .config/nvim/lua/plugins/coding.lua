@@ -107,9 +107,9 @@ return {
         -- ネストの展開・結合
         "Wansmer/treesj",
         keys = {
-            { "<space>m",  desc = "Split or Join code block with autodetect" },
-            { "<space>j",  desc = "Join code block" },
-            { "<space>s",  desc = "Split code block" },
+            { "<space>m", desc = "Split or Join code block with autodetect" },
+            { "<space>j", desc = "Join code block" },
+            { "<space>s", desc = "Split code block" },
         },
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {},
@@ -240,12 +240,28 @@ return {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
+            {
+                "L3MON4D3/LuaSnip",
+                -- follow latest release.
+                version = "v2.*",
+                -- install jsregexp (optional!).
+                -- build = "make install_jsregexp"
+            },
+
             "hrsh7th/cmp-emoji",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-cmdline",
         },
         opts = function(_, opts)
             local cmp = require("cmp")
+
+            opts.snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body)
+                end,
+            }
 
             opts.mapping = cmp.mapping.preset.insert({
                 ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -254,7 +270,8 @@ return {
                 ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             })
 
-            opts.sources = {
+            opts.sources = cmp.config.sources({
+                { name = "luasnip" },
                 {
                     name = "lazydev",
                     group_index = 0, -- set group index to 0 to skip loading LuaLS completions
@@ -262,7 +279,30 @@ return {
                 { name = "emoji" },
                 { name = "nvim_lsp" },
                 { name = "path" },
-            }
+            }, {
+                { name = "buffer" },
+            })
         end,
+        config = function(_, opts)
+            local cmp = require("cmp")
+            cmp.setup(opts)
+
+            cmp.setup.cmdline({ '/', '?' }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = 'buffer' }
+                }
+            })
+
+            cmp.setup.cmdline(':', {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = 'path' }
+                }, {
+                    { name = 'cmdline' }
+                }),
+                matching = { disallow_symbol_nonprefix_matching = false }
+            })
+        end
     },
 }
