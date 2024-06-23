@@ -57,7 +57,6 @@ return {
                     vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref<CR>", bufopts)
                     vim.keymap.set("n", "<leader>li", "<cmd>Lspsaga finder imp<CR>", bufopts)
 
-                    vim.keymap.set("i", "<C-\\>", vim.lsp.buf.signature_help, bufopts)
                     vim.keymap.set("n", "K", "<cmd>Lspsaga peek_definition<CR>", bufopts)
                     vim.keymap.set("n", "<C-]>", "<cmd>Lspsaga goto_definition<CR>", bufopts)
 
@@ -69,10 +68,5 @@ return {
                 end,
             })
         end,
-    },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {},
     },
 }
