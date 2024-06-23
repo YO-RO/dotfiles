@@ -127,10 +127,4 @@ return {
             blank = { enable = false },
         },
     },
-    {
-        -- Display file name
-        'b0o/incline.nvim',
-        event = 'VeryLazy',
-        config = true,
-    },
 }
