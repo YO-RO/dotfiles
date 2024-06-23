@@ -106,7 +106,11 @@ return {
     {
         -- ネストの展開・結合
         "Wansmer/treesj",
-        keys = { "<space>m", "<space>j", "<space>s" },
+        keys = {
+            { "<space>m",  desc = "Split or Join code block with autodetect" },
+            { "<space>j",  desc = "Join code block" },
+            { "<space>s",  desc = "Split code block" },
+        },
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {},
     },
