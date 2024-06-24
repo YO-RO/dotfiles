@@ -135,7 +135,7 @@ return {
     {
         -- Status Line
         'nvim-lualine/lualine.nvim',
-        event = "ColorScheme",
+        event = "VeryLazy",
         opts = {
             options = {
                 theme = "auto",
