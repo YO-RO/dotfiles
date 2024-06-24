@@ -246,9 +246,36 @@ return {
                 version = "v2.*",
                 -- install jsregexp (optional!).
                 -- build = "make install_jsregexp"
+                config = true,
+                dependencies = {
+                    {
+                        "rafamadriz/friendly-snippets",
+                        config = function()
+                            require("luasnip.loaders.from_vscode").lazy_load()
+                        end,
+                    },
+                },
+                keys = {
+                    {
+                        "<C-l>",
+                        function()
+                            require("luasnip").jump(1)
+                        end,
+                        mode = { "i", "s" },
+                        silent = true,
+                    },
+                    {
+                        "<C-j>",
+                        function()
+                            require("luasnip").jump(-1)
+                        end,
+                        mode = { "i", "s" },
+                        silent = true,
+                    },
+                },
             },
+            "saadparwaiz1/cmp_luasnip",
 
-            "hrsh7th/cmp-emoji",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
@@ -264,10 +291,10 @@ return {
             }
 
             opts.mapping = cmp.mapping.preset.insert({
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
                 ['<C-c>'] = cmp.mapping.abort(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
             })
 
             opts.sources = cmp.config.sources({
@@ -276,8 +303,13 @@ return {
                     name = "lazydev",
                     group_index = 0, -- set group index to 0 to skip loading LuaLS completions
                 },
-                { name = "emoji" },
-                { name = "nvim_lsp" },
+                {
+                    name = "nvim_lsp",
+                    entry_filter = function(entry, ctx)
+                        -- hide Keyword
+                        return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Keyword'
+                    end,
+                },
                 { name = "path" },
             }, {
                 { name = "buffer" },
