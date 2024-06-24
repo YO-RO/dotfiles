@@ -1,5 +1,4 @@
 return {
-    -- テーマを変えるときはlualineも忘れずに!
     {
         -- Colorscheme
         "folke/tokyonight.nvim",
@@ -139,7 +138,7 @@ return {
         event = "ColorScheme",
         opts = {
             options = {
-                theme = "tokyonight",
+                theme = "auto",
                 section_separators = '',
                 component_separators = '',
             },
