@@ -14,8 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", {
     defaults = { lazy = true, },
     dev = { path = "~/workspace/source_code/nvim_plugins", },
-    install = { colorscheme = { "base16-nvim" } },
 })
-
--- main colorscheme
-vim.cmd("colorscheme base16-tokyo-night-light")

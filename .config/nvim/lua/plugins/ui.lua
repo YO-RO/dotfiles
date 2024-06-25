@@ -1,14 +1,18 @@
+-- main colorscheme は { lazy = false, priority = 1000, } に変更必要がある。
+-- また、config 内で vim.cmd("colorscheme {main colorscheme name}") を実行する必要がある。
 return {
-    -- main colorscheme の設定は lua/config/lazy.lua で行う
     {
         -- Colorscheme
         "RRethy/base16-nvim",
-        event = "VeryLazy",
+        lazy = false,
+        priority = 1000,
         config = function(_, _)
             require("base16-colorscheme").with_config({
                 telescope = true,
                 cmp = true,
             })
+
+            vim.cmd("colorscheme base16-tokyo-night-light")
         end,
     },
     {
