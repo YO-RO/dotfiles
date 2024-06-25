@@ -204,4 +204,35 @@ return {
         event = "VeryLazy",
         opts = {},
     },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts)
+            require("toggleterm").setup(opts)
+
+            vim.keymap.set(
+                { "n", "t" }, "<C-_>",
+                "<cmd>ToggleTerm direction=float<CR>",
+                { silent = true, }
+            )
+
+            local Terminal = require('toggleterm.terminal').Terminal
+            local lazygit  = Terminal:new({
+                cmd = "lazygit",
+                direction = "float",
+                hidden = true,
+            })
+            function _lazygit_toggle()
+                lazygit:toggle()
+            end
+
+            vim.keymap.set(
+                { "n", "t" }, "<C-g>",
+                "<cmd>lua _lazygit_toggle()<CR>",
+                { silent = true, desc = "Toggle LazyGit" }
+            )
+        end
+    },
 }
