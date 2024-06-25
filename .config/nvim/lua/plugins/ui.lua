@@ -103,12 +103,11 @@ return {
     {
         -- Center windows
         "shortcuts/no-neck-pain.nvim",
-        event = "UIEnter",
         version = "*",
-        config = function(_, opts)
-            require("no-neck-pain").setup(opts)
-            vim.cmd("NoNeckPain")
-        end,
+        keys = {
+            { "<leader>n", "<cmd>NoNeckPain<CR>", desc = "NoNeckPain" },
+        },
+        config = true,
     },
     {
         "folke/which-key.nvim",
