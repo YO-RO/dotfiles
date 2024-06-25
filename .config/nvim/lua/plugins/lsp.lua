@@ -75,6 +75,11 @@ return {
                     )
 
                     vim.keymap.set(
+                        "n", "<leader>lh",
+                        "<cmd>Lspsaga hover_doc<CR>",
+                        bufopts
+                    )
+                    vim.keymap.set(
                         "n", "K",
                         "<cmd>Lspsaga peek_definition<CR>",
                         bufopts
