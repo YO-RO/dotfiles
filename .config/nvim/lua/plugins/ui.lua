@@ -1,26 +1,20 @@
 return {
+    -- main colorscheme の設定は lua/config/lazy.lua で行う
     {
+        -- Colorscheme
         "RRethy/base16-nvim",
-        lazy = false,
-        priority = 1000,
+        event = "VeryLazy",
         config = function(_, _)
             require("base16-colorscheme").setup(nil, {
                 telescope = true,
                 cmp = true,
             })
-
-            -- vim.cmd("colorscheme base16-atelier-forest-light")
         end,
     },
     {
         -- Colorscheme
         "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function(_, opts)
-            require("tokyonight").setup(opts)
-            vim.cmd [[colorscheme tokyonight]]
-        end,
+        event = "VeryLazy",
         opts = {
             style = "moon",
             light_style = "day",
@@ -31,12 +25,7 @@ return {
         -- Colorscheme
         "catppuccin/nvim",
         name = "catppuccin", -- name of local dir
-        lazy = false,
-        priority = 1000,
-        config = function(_, opts)
-            require("catppuccin").setup(opts)
-            -- vim.cmd("colorscheme catppuccin")
-        end,
+        event = "VeryLazy",
         opts = {
             flavour = "latte",
             dim_inactive = {
