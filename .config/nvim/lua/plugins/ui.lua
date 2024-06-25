@@ -5,7 +5,7 @@ return {
         "RRethy/base16-nvim",
         event = "VeryLazy",
         config = function(_, _)
-            require("base16-colorscheme").setup(nil, {
+            require("base16-colorscheme").with_config({
                 telescope = true,
                 cmp = true,
             })
