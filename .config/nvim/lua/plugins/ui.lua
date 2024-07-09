@@ -181,6 +181,7 @@ return {
                 lualine_y = {},
                 lualine_z = {},
             },
+            extensions = { "oil" },
         },
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
