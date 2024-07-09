@@ -4,21 +4,29 @@ return {
     {
         -- Colorscheme
         "RRethy/base16-nvim",
-        lazy = false,
-        priority = 1000,
+        event = "VeryLazy",
+        -- lazy = false,
+        -- priority = 1000,
         config = function(_, _)
             require("base16-colorscheme").with_config({
                 telescope = true,
                 cmp = true,
             })
 
-            vim.cmd("colorscheme base16-tokyo-night-light")
+            -- vim.cmd("colorscheme base16-tokyo-night-light")
         end,
     },
     {
         -- Colorscheme
         "folke/tokyonight.nvim",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
+        lazy = false,
+        priority = 1000,
+        config = function(_, opts)
+            require("tokyonight").setup(opts)
+
+            vim.cmd.colorscheme("tokyonight")
+        end,
         opts = {
             style = "moon",
             light_style = "day",
@@ -30,6 +38,13 @@ return {
         "catppuccin/nvim",
         name = "catppuccin", -- name of local dir
         event = "VeryLazy",
+        -- lazy = false,
+        -- priority = 1000,
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+
+            -- vim.cmd.colorscheme("catppuccin")
+        end,
         opts = {
             flavour = "latte",
             dim_inactive = {
