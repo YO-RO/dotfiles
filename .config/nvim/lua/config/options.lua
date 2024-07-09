@@ -4,6 +4,8 @@ set.termguicolors = true
 
 set.confirm = true
 
+set.clipboard = "unnamedplus"
+
 set.number = true            -- 行番号を表示
 set.relativenumber = true
 set.cursorline = true        -- カーソルがある行を強調
