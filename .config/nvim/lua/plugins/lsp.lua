@@ -34,6 +34,23 @@ return {
                 },
             })
 
+            lspconfig.pylsp.setup({
+                capabilities = capabilities,
+                plugins = {
+                    autopep8 = { enabled = false },
+                    flake8 = { enabled = false, },
+                    mccabe = { enabled = false, },
+                    pycodestyle = { enabled = false, },
+                    pyflakes = { enabled = false, },
+                    pylint = { enabled = false, },
+                    yapf = { enabled = false, },
+                }
+            })
+
+            lspconfig.ruff.setup({
+                capabilities = capabilities,
+            })
+
             lspconfig.gopls.setup({
                 capabilities = capabilities,
             })
