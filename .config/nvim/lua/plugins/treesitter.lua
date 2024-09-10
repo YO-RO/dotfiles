@@ -21,6 +21,7 @@ return {
                 "sql",
                 "jsonc",
                 "toml",
+                "yaml",
                 "markdown",
                 "markdown_inline",
                 "vimdoc",
