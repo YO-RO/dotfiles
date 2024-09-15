@@ -48,6 +48,12 @@ return {
                 }
             })
 
+            -- type checker
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
+
+            -- linter and formatter
             lspconfig.ruff.setup({
                 capabilities = capabilities,
             })
