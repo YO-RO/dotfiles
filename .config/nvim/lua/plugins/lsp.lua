@@ -20,7 +20,6 @@ return {
             })
 
             require('lspconfig').yamlls.setup({
-                filetypes = { 'yaml', 'yml', 'yaml.docker-compose', 'yaml.gitlab' },
                 settings = {
                     yaml = {
                         schemaStore = {
