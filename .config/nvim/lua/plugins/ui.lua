@@ -19,13 +19,13 @@ return {
     {
         -- Colorscheme
         "folke/tokyonight.nvim",
-        -- event = "VeryLazy",
-        lazy = false,
-        priority = 1000,
+        event = "VeryLazy",
+        -- lazy = false,
+        -- priority = 1000,
         config = function(_, opts)
             require("tokyonight").setup(opts)
 
-            vim.cmd.colorscheme("tokyonight")
+            -- vim.cmd.colorscheme("tokyonight")
         end,
         opts = {
             style = "moon",
@@ -37,16 +37,16 @@ return {
         -- Colorscheme
         "catppuccin/nvim",
         name = "catppuccin", -- name of local dir
-        event = "VeryLazy",
-        -- lazy = false,
-        -- priority = 1000,
+        -- event = "VeryLazy",
+        lazy = false,
+        priority = 1000,
         config = function(_, opts)
             require("catppuccin").setup(opts)
 
-            -- vim.cmd.colorscheme("catppuccin")
+            vim.cmd.colorscheme("catppuccin")
         end,
         opts = {
-            flavour = "latte",
+            -- flavour = "latte",
             dim_inactive = {
                 enabled = true,
                 shade = "dark",
