@@ -74,6 +74,22 @@ return {
                 capabilities = capabilities,
             })
 
+            lspconfig.html.setup({
+                capabilities = capabilities,
+                filetypes = {
+                    "html", "htmldjango", "templ",
+                },
+            })
+
+            lspconfig.biome.setup({
+                capabilities = capabilities,
+                single_file_support = true,
+            })
+
+            lspconfig.tailwindcss.setup({
+                capabilities = capabilities,
+            })
+
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
