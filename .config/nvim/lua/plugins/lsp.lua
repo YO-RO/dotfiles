@@ -50,6 +50,11 @@ return {
             -- type checker
             lspconfig.pyright.setup({
                 capabilities = capabilities,
+                settings = {
+                    pyright = {
+                        disableOrganizeImports = true,
+                    },
+                },
             })
 
             -- linter and formatter
