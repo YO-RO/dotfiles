@@ -215,6 +215,9 @@ return {
                     close = "<C-c>k",
                 },
             },
+            rename = {
+                auto_save = true,
+            },
         },
     },
     {
