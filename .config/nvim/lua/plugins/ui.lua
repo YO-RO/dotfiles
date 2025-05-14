@@ -1,105 +1,4 @@
--- main colorscheme は { lazy = false, priority = 1000, } に変更必要がある。
--- また、config 内で vim.cmd("colorscheme {main colorscheme name}") を実行する必要がある。
 return {
-    {
-        -- Colorscheme
-        "RRethy/base16-nvim",
-        event = "VeryLazy",
-        -- lazy = false,
-        -- priority = 1000,
-        config = function(_, _)
-            require("base16-colorscheme").with_config({
-                telescope = true,
-                cmp = true,
-            })
-
-            -- vim.cmd("colorscheme base16-tokyo-night-light")
-        end,
-    },
-    {
-        -- Colorscheme
-        "folke/tokyonight.nvim",
-        event = "VeryLazy",
-        -- lazy = false,
-        -- priority = 1000,
-        config = function(_, opts)
-            require("tokyonight").setup(opts)
-
-            -- vim.cmd.colorscheme("tokyonight")
-        end,
-        opts = {
-            style = "moon",
-            light_style = "day",
-            dim_inactive = false,
-        },
-    },
-    {
-        -- Colorscheme
-        "catppuccin/nvim",
-        name = "catppuccin", -- name of local dir
-        -- event = "VeryLazy",
-        lazy = false,
-        priority = 1000,
-        config = function(_, opts)
-            require("catppuccin").setup(opts)
-
-            vim.cmd.colorscheme("catppuccin")
-        end,
-        opts = {
-            -- flavour = "latte",
-            dim_inactive = {
-                enabled = true,
-                shade = "dark",
-                percentage = 0.15,
-            },
-            custom_highlights = function(colors)
-                return {
-                    Comment = { fg = colors.overlay2 },
-
-                    Cursor = { fg = colors.crust, bg = colors.rosewater },
-                    lCursor = { fg = colors.crust, bg = colors.rosewater },
-                    CursorIM = { fg = colors.crust, bg = colors.red },
-
-                    LineNr = { fg = colors.overlay1 }
-                }
-            end,
-            integrations = {
-                aerial = true,
-                alpha = true,
-                cmp = true,
-                dashboard = true,
-                flash = true,
-                gitsigns = true,
-                headlines = true,
-                illuminate = true,
-                indent_blankline = { enabled = true },
-                leap = true,
-                lsp_trouble = true,
-                mason = true,
-                markdown = true,
-                mini = true,
-                native_lsp = {
-                    enabled = true,
-                    underlines = {
-                        errors = { "undercurl" },
-                        hints = { "undercurl" },
-                        warnings = { "undercurl" },
-                        information = { "undercurl" },
-                    },
-                },
-                navic = { enabled = true, custom_bg = "lualine" },
-                neotest = true,
-                neotree = true,
-                noice = true,
-                notify = true,
-                semantic_tokens = true,
-                telescope = true,
-                treesitter = true,
-                treesitter_context = true,
-                which_key = true,
-            },
-        },
-    },
     {
         -- File explorer
         'stevearc/oil.nvim',
@@ -224,7 +123,13 @@ return {
         -- 関数の引数を入力するときにヒントを表示
         "ray-x/lsp_signature.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            hint_prefix = {
+                above = "↙ ", -- when the hint is on the line above the current line
+                current = "← ", -- when the hint is on the same line
+                below = "↖ " -- when the hint is on the line below the current line
+            }
+        },
     },
     {
         'akinsho/toggleterm.nvim',

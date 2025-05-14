@@ -11,6 +11,7 @@ return {
         opts = {
             ensure_installed = {
                 "bash",
+                "c",
                 "dart",
                 "tmux",
                 "lua",
