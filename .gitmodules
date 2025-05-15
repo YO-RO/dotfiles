@@ -1,3 +1,6 @@
 [submodule ".config/nvim/pack/scroll/opt/comfortable-motion.vim"]
 	path = .config/nvim/pack/scroll/opt/comfortable-motion.vim
 	url = https://github.com/yuttie/comfortable-motion.vim
+[submodule ".config/tmux"]
+	path = .config/tmux
+	url = https://github.com/YO-RO/tmux
