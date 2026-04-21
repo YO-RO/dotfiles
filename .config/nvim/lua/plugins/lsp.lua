@@ -1,16 +1,6 @@
 -- TODO: Add mason, mason-lspconfig and none-ls.
 return {
     {
-        'nvim-flutter/flutter-tools.nvim',
-        -- lazy = false,
-        ft = 'dart',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- optional for vim.ui.select
-        },
-        config = true,
-    },
-    {
         "neovim/nvim-lspconfig",
         lazy = false,
         dependencies = {

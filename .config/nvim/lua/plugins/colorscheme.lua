@@ -1,16 +1,6 @@
 -- main colorscheme は { lazy = false, priority = 1000, } に変更必要がある。
 -- また、config 内で vim.cmd("colorscheme {main colorscheme name}") を実行する必要がある。
 return {
-    -- {
-    --     "RRethy/base16-nvim",
-    --     event = "VeryLazy",
-    --     config = function(_, _)
-    --         require("base16-colorscheme").with_config({
-    --             telescope = true,
-    --             cmp = true,
-    --         })
-    --     end,
-    -- },
     {
         "catppuccin/nvim",
         name = "catppuccin", -- name of local dir

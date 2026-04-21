@@ -71,12 +71,12 @@ return {
             { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
         },
     },
-    {
-        "kylechui/nvim-surround",
-        version = "*", -- Use for stability; omit to use `main` branch for the latest features
-        event = "VeryLazy",
-        config = true,
-    },
+    -- {
+    --     "kylechui/nvim-surround",
+    --     version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    --     event = "VeryLazy",
+    --     config = true,
+    -- },
     {
         "numToStr/Comment.nvim",
         event = { "BufReadPre", "BufNewFile" },
@@ -103,17 +103,17 @@ return {
             },
         },
     },
-    {
-        -- ネストの展開・結合
-        "Wansmer/treesj",
-        keys = {
-            { "<space>m", desc = "Split or Join code block with autodetect" },
-            { "<space>j", desc = "Join code block" },
-            { "<space>s", desc = "Split code block" },
-        },
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        opts = {},
-    },
+    -- {
+    --     -- ネストの展開・結合
+    --     "Wansmer/treesj",
+    --     keys = {
+    --         { "<space>m", desc = "Split or Join code block with autodetect" },
+    --         { "<space>j", desc = "Join code block" },
+    --         { "<space>s", desc = "Split code block" },
+    --     },
+    --     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    --     opts = {},
+    -- },
     {
         "monaqa/dial.nvim",
         config = function()
