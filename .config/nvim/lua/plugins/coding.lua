@@ -173,7 +173,11 @@ return {
     },
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
+        version = '*',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        },
         keys = {
             {
                 "<leader>ff",
@@ -204,7 +208,6 @@ return {
                 desc = "Find nvim help",
             },
         },
-        dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
             defaults = {
                 sorting_strategy = "ascending",
